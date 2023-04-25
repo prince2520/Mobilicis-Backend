@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express()
-const server = require('http').Server(app);
+const index = require('http').Server(app);
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -38,6 +38,6 @@ mongoose.connect(`mongodb+srv://${process.env.MONGOOSE_ID}:${process.env.MONGOOS
     useNewUrlParser: true
 }).then(() => {
     console.log('Connected to MongoDB')
-    console.log('Connected to server!')
-    server.listen(PORT);
+    console.log('Connected to index!')
+    index.listen(PORT);
 })
